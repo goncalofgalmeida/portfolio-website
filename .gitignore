@@ -1,4 +1,8 @@
 .env
 
-# IDE stuff
+# IDE
 .idea
+
+# Hugo
+public/
+.hugo_build.lock

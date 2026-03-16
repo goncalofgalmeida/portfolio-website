@@ -1,0 +1,271 @@
+baseURL = 'https://goncaloalmeida.pt'
+languageCode = 'en-us'
+title = 'Gonçalo Almeida'
+theme = "minimal-black"
+
+# Enable search index generation and web app manifest
+[outputs]
+  home = ["HTML", "RSS", "JSON", "WebAppManifest"]
+
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  rel = "manifest"
+  baseName = "manifest"
+  isPlainText = true
+  notAlternative = true
+
+[params]
+  brand = "Gonçalo Almeida"
+  description = "Software engineer. These are my projects."
+
+  # Favicon - Place your favicon files in /static/ directory
+  # Supported formats: .ico, .png, .svg
+  favicon = "icons/favicon.svg"
+  appleTouchIcon = "apple-touch-icon.png"
+
+  # Project and blog intro text
+  projectsIntro = "A selection of things I’ve been building and working on."
+  blogIntro = "A collection of thoughts and rants."
+
+  # Web App Manifest Configuration (PWA support)
+  [params.manifest]
+    themeColor = "#a855f7"
+    backgroundColor = "#000000"
+    categories = ["blog", "portfolio", "developer"]
+
+    # Custom icon configuration (optional)
+    # If not specified, defaults to /icons/android-chrome-*.png
+    # [[params.manifest.icons]]
+    #   src = "/icons/android-chrome-192x192.png"
+    #   sizes = "192x192"
+    #   type = "image/png"
+    #   purpose = "any maskable"
+
+  # Theme Configuration
+  [params.theme]
+    defaultTheme = "dark"  # Options: "light", "dark", "system"
+
+  # Home Page Configuration
+  [params.home]
+    sections = ["hero", "now", "tech-marquee", "projects", "posts"]
+    showNowSection = false
+    showFeaturedProjects = true
+    showLatestPosts = true
+    featuredProjectsLimit = 3
+    latestPostsLimit = 3
+    projectsTitle = "Selected Work"
+    projectsSubtitle = ""
+    blogTitle = "Latest Writing"
+    blogSubtitle = ""
+    techMarqueeLabel = "Experienced In"
+
+    # Technology Stack Display
+    ## First Row (Languages and Frameworks)
+    [[params.home.tech]]
+      label = "JavaScript"
+      icon = "devicon-javascript-plain"
+    [[params.home.tech]]
+      label = "TypeScript"
+      icon = "devicon-typescript-plain"
+    [[params.home.tech]]
+      label = "Python"
+      icon = "devicon-python-plain"
+    [[params.home.tech]]
+      label = "HTML"
+      icon = "devicon-html5-plain"
+    [[params.home.tech]]
+      label = "CSS"
+      icon = "devicon-css3-plain"
+    [[params.home.tech]]
+      label = "NodeJS"
+      icon = "devicon-nodejs-plain"
+    [[params.home.tech]]
+      label = "Go"
+      icon = "devicon-go-plain"
+
+    ## Tools
+    [[params.home.techReverse]]
+      label = "Git"
+      icon = "devicon-git-plain"
+    [[params.home.techReverse]]
+      label = "Docker"
+      icon = "devicon-docker-plain"
+    [[params.home.techReverse]]
+      label = "Kubernetes"
+      icon = "devicon-kubernetes-plain"
+    [[params.home.techReverse]]
+      label = "AWS"
+      icon = "devicon-amazonwebservices-plain"
+    [[params.home.techReverse]]
+      label = "Linux"
+      icon = "devicon-linux-plain"
+    [[params.home.techReverse]]
+      label = "PostgreSQL"
+      icon = "devicon-postgresql-plain"
+    [[params.home.techReverse]]
+      label = "MongoDB"
+      icon = "devicon-mongodb-plain"
+    [[params.home.techReverse]]
+      label = "Hugo"
+      icon = "devicon-hugo-plain"
+
+  # Hero Section Configuration
+  [params.hero]
+    badge = ""
+    title = "Hi, I'm Gonçalo."
+    role = "Full-Stack Engineer @ Pixelmatters"
+    summary = "Software developer and Hardware enthusiast."
+    # avatar = "images/avatar.jpg"  # Optional: 400x400px recommended
+    location = "Guimarães, Portugal"
+    focus = "Currently focused on AI agents and learning Go(lang)."
+    available = false
+    availableLabel = "Available for work"
+
+    nowLabel = "Quick Facts"
+    nowIntro = "Right now I'm mainly:"
+    now = [
+      "Bullet point #1",
+      "Bullet point #2",
+      "Bullet point #3"
+    ]
+
+    [params.hero.primary]
+      label = "View Projects"
+      href = "/projects/"
+
+    [params.hero.secondary]
+      label = "Read the Blog"
+      href = "/blog/"
+
+  # Icon Libraries
+  [params.icons]
+    useFontAwesome = true
+    useDevicon = true
+
+  # Social Links
+  [[params.social]]
+    label = "Github"
+    url = "https://github.com/goncalofgalmeida"
+    icon = "fa-brands fa-github"
+
+  [[params.social]]
+    label = "LinkedIn"
+    url = "https://www.linkedin.com/in/goncalofgalmeida/"
+    icon = "fa-brands fa-linkedin-in"
+
+#  [[params.social]]
+#    label = "Email"
+#    url = "mailto:you@example.com"
+#    icon = "fa-regular fa-envelope"
+
+  # Analytics Configuration
+  [params.analytics]
+    # Google Analytics (GA4)
+    # googleAnalytics = "G-XXXXXXXXXX"
+
+    # Plausible Analytics (privacy-friendly)
+    # [params.analytics.plausible]
+    #   enabled = true
+    #   domain = "yourdomain.com"
+    #   scriptUrl = "https://plausible.io/js/script.js"
+
+    # Umami Analytics (self-hosted option)
+    # [params.analytics.umami]
+    #   enabled = true
+    #   scriptUrl = "https://analytics.yourdomain.com/script.js"
+    #   websiteId = "your-website-id"
+
+    # Fathom Analytics
+    # [params.analytics.fathom]
+    #   enabled = true
+    #   scriptUrl = "https://cdn.usefathom.com/script.js"
+    #   siteId = "YOUR-SITE-ID"
+
+# Navigation Menu
+[menu]
+  # [[menu.main]]
+  #   name = "Home"
+  #   pageRef = "/"
+  #   url = "/"
+  #   weight = 1
+  #   identifier = "home"
+  #   [menu.main.params]
+  #     icon = "fa-solid fa-house"
+
+  [[menu.main]]
+    name = "About"
+    pageRef = "about"
+    url = "/about/"
+    weight = 2
+    identifier = "about"
+    [menu.main.params]
+      icon = "fa-regular fa-user"
+
+  [[menu.main]]
+    name = "Projects"
+    pageRef = "projects"
+    url = "/projects/"
+    weight = 3
+    identifier = "projects"
+    [menu.main.params]
+      icon = "fa-regular fa-folder-open"
+
+  [[menu.main]]
+    name = "Blog"
+    pageRef = "blog"
+    url = "/blog/"
+    weight = 4
+    identifier = "blog"
+    [menu.main.params]
+      icon = "fa-regular fa-note-sticky"
+
+# Markup Configuration
+[markup]
+  # Table of Contents
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+
+  # Goldmark Renderer (Markdown)
+  [markup.goldmark.renderer]
+    unsafe = true
+
+  [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
+  [markup.goldmark.extensions]
+    typographer = true
+    linkify = true
+    table = true
+    strikethrough = true
+    taskList = true
+    definitionList = true
+    footnote = true
+
+    [markup.goldmark.extensions.extras.delete]
+      enable = true
+    [markup.goldmark.extensions.extras.insert]
+      enable = true
+    [markup.goldmark.extensions.extras.mark]
+      enable = true
+
+  # Syntax Highlighting
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    style = "monokai"
+    tabWidth = 2
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Privacy Configuration
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true
