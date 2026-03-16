@@ -1,6 +1,6 @@
 +++
 date = '2026-02-22T00:37:34Z'
-draft = true
+draft = false
 title = 'About Me'
 subtitle = 'Full-Stack Engineer'
 layout = 'about'
